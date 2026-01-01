@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Profesional - Analis Administrasi & Keuangan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0c2d48;
+            --secondary-color: #145da0;
+            --accent-color: #2e8bc0;
+            --accent-light: #b1d4e0;
+            --text-color: #333333;
+            --text-light: #666666;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 10px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-certificate {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        .btn-certificate:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .section-padding {
+            padding: 100px 0;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+        
+        .hero h1, .hero h3, .hero p {
+            color: white;
+        }
+        
+        .hero h1 span {
+            color: var(--accent-light);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') no-repeat center;
+            background-size: cover;
+            opacity: 0.2;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1.5;
+        }
+        
+        .about-highlights {
+            flex: 1;
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: var(--light-bg);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .timeline-content {
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        /* Foto Profil */
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            border: 5px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Pendidikan Section */
+        .education {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+        }
+        
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .education-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+        }
+        
+        .education-year {
+            display: inline-block;
+            background-color: var(--light-bg);
+            color: var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent-light);
+        }
+        
+        .education-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .education-highlight {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .education-highlight p {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .education-highlight i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        /* Popup Sertifikat */
+        .certificate-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .certificate-popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-container {
+            background-color: white;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform: translateY(-50px);
+            transition: transform 0.4s ease;
+        }
+        
+        .certificate-popup.active .popup-container {
+            transform: translateY(0);
+        }
+        
+        .popup-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .popup-header h3 {
+            color: white;
+            margin: 0;
+        }
+        
+        .popup-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .popup-close:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .popup-content {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .certificate-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .certificate-item {
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid #eee;
+            cursor: pointer;
+        }
+        
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certificate-image {
+            height: 150px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .certificate-item:hover .certificate-image img {
+            transform: scale(1.05);
+        }
+        
+        .certificate-info {
+            padding: 15px;
+        }
+        
+        .certificate-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .certificate-info p {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+        
+        .certificate-year {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+        
+        /* Modal Sertifikat Detail */
+        .certificate-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .certificate-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .certificate-modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            object-fit: contain;
+            background-color: #f8f9fa;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+        }
+        
+        .modal-close:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .modal-info {
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+        }
+        
+        .modal-info h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .modal-info p {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: white;
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            padding: 25px;
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--accent-light);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-left: 10px;
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero-bg {
+                width: 100%;
+                opacity: 0.1;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .certificate-list {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                z-index: 999;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .education-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+            
+            .certificate-list {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .popup-container {
+                width: 95%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-padding {
+                padding: 70px 0;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+            }
+            
+            .skill-category, .education-card, .timeline-content {
+                padding: 20px;
+            }
+            
+            .timeline:before {
+                left: 25px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-date {
+                width: 50px;
+                height: 50px;
+                font-size: 0.9rem;
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .popup-content {
+                padding: 20px;
+            }
+            
+            .certificate-list {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">YULIANTO.AP</a>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Profil</a></li>
+                    <li><a href="#skills">Keahlian</a></li>
+                    <li><a href="#experience">Pengalaman</a></li>
+                    <li><a href="#education">Pendidikan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Analis Administrasi <span>Verifikasi Penjaminan</span></h1>
+                <h3>Spesialis Pengolahan Data Keuangan & Administrasi</h3>
+                <p>Saya YULIANTO.AP biasa dipanggil Anto. Saya lulusan S1 Manajemen Keuangan Universitas Mercu Buana Yogyakarta dengan pengalaman lebih dari 3 tahun dalam analisis administrasi, verifikasi dokumen, dan pengolahan data keuangan. Memiliki kemampuan kuat dalam memastikan kelengkapan dan keakuratan berkas penjaminan sesuai SOP yang berlaku.</p>
+                <a href="#contact" class="btn">Hubungi Saya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <h2>Profil Profesional</h2>
+            
+            <div class="profile-photo">
+                <img src="profil.jpeg" alt="Foto Profil">
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Analis Administrasi & Verifikasi dengan Ketelitian Tinggi</h3>
+                    <p>Saya adalah profesional di bidang administrasi keuangan dan verifikasi penjaminan dengan pengalaman lebih dari 3 tahun. Fokus utama saya adalah melakukan analisis kelengkapan berkas penjaminan, pengecekan kesesuaian data, dan memastikan seluruh proses administrasi berjalan sesuai SOP yang berlaku.</p>
+                    <p>Terbiasa menangani data dalam jumlah besar dengan tingkat ketelitian tinggi, saya memiliki kemampuan dalam menyusun laporan keuangan, melakukan input data ke sistem dengan akurasi, serta mengoptimalkan efisiensi waktu dalam setiap proses administrasi.</p>
+                    <p>Saya berpengalaman dalam menjalin koordinasi dengan tim internal maupun eksternal, termasuk bagian keuangan, penjaminan, operasional, serta pihak klien atau pasien untuk memastikan kelancaran proses verifikasi dan penyelesaian klaim.</p>
+                </div>
+                <div class="about-highlights">
+                    <h3>Poin Kekuatan</h3>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <div>
+                            <h4>Analisis Administrasi Keuangan</h4>
+                            <p>Menganalisis kelengkapan dan keakuratan dokumen keuangan</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div>
+                            <h4>Verifikasi Penjaminan</h4>
+                            <p>Memastikan kesesuaian data dan dokumen penjaminan</p>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h4>Pengolahan Data</h4>
+                            <p>Mengelola data dalam jumlah besar dengan ketelitian tinggi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section-padding" id="skills">
+        <div class="container">
+            <h2>Keahlian Utama</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Keahlian Administratif</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Analisis Kelengkapan Berkas Penjaminan</li>
+                        <li><i class="fas fa-check-circle"></i> Verifikasi Dokumen Keuangan</li>
+                        <li><i class="fas fa-check-circle"></i> Pengolahan Data Administrasi</li>
+                        <li><i class="fas fa-check-circle"></i> Pengecekan Kesesuaian Data</li>
+                        <li><i class="fas fa-check-circle"></i> Penyusunan Laporan Keuangan</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Keahlian Teknis</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Microsoft Office (Excel, Word, PowerPoint)</li>
+                        <li><i class="fas fa-check-circle"></i> Software Akuntansi & Keuangan</li>
+                        <li><i class="fas fa-check-circle"></i> Sistem Database Administrasi</li>
+                        <li><i class="fas fa-check-circle"></i> Input Data dengan Akurasi Tinggi</li>
+                        <li><i class="fas fa-check-circle"></i> Analisis Data Kuantitatif</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Keahlian Lainnya</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Koordinasi Tim Internal & Eksternal</li>
+                        <li><i class="fas fa-check-circle"></i> Manajemen Waktu yang Efisien</li>
+                        <li><i class="fas fa-check-circle"></i> Komunikasi yang Efektif</li>
+                        <li><i class="fas fa-check-circle"></i> Penyelesaian Masalah Administratif</li>
+                        <li><i class="fas fa-check-circle"></i> Kepatuhan terhadap SOP</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section-padding" id="experience">
+        <div class="container">
+            <h2>Pengalaman Kerja</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - Saat Ini</div>
+                    <div class="timeline-content">
+                         <h4>Staf Administrasi Keuangan</h4>
+                        <p><strong>RSAB HARAPAN KITA</strong></p>
+                        <ul>
+                            <li>Membantu proses administrasi keuangan dan penjaminan</li>
+                            <li>Melakukan input data ke sistem dengan akurasi tinggi</li>
+                            <li>Menyusun laporan keuangan dan administrasi bulanan</li>
+                            <li>Melakukan pengecekan kesesuaian data dokumen klien</li>
+                            <li>Mendukung tim dalam penyelesaian klaim penjaminan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2021</div>
+                    <div class="timeline-content">
+                        <h4>Admin Gudang</h4>
+                        <p><strong>PT. LASTANA EKSPRESS INDONESIA</strong></p>
+                        <ul>
+                            <li>Mengontrol seluruh kegiatan yang berkaitan dengan keluar masuk barang</li>
+                            <li>Memastikan kondisi barang dan memisahkan antara barang layak jual dan barang rusak (damage)</li>
+                            <li>Melakukan input seluruh kegiatan operasional gudang ke dalam sistem</li>
+                            <li>Melakukan pengecekan stok barang di gudang secara berkala</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pendidikan Section -->
+    <section class="education section-padding" id="education">
+        <div class="container">
+            <h2>Riwayat Pendidikan</h2>
+            <div class="education-grid">
+                <!-- KULIAH -->
+                <div class="education-card">
+                    <div class="education-year">2016 - 2020</div>
+                    <div class="education-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>S1 Manajemen Keuangan</h3>
+                    <p><strong>Universitas Mercu Buana Yogyakarta</strong></p>
+                    
+                    <div class="education-highlight">
+                        
+                    </div>
+                </div>
+                
+                <!-- SERTIFIKASI -->
+                <div class="education-card">
+                    <div class="education-year">2020 - 2023</div>
+                    <div class="education-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Sertifikat</h3>
+                    <p><strong>6 Sertifikasi Keahlian</strong></p>
+                    <p>Saya telah mengikuti berbagai seminar dan memperoleh sertifikat yang relevan dengan bidang administrasi keuangan, verifikasi dokumen, dan manajemen data.</p>
+                    <div class="education-highlight">
+              
+                    </div>
+                    <button class="btn btn-certificate" id="viewCertificatesBtn">
+                        <i class="fas fa-eye"></i> Lihat Semua Sertifikat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Sertifikat -->
+    <div class="certificate-popup" id="certificatePopup">
+        <div class="popup-container">
+            <div class="popup-header">
+                <h3>Sertifikat</h3>
+                <button class="popup-close" id="popupClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-content">
+                <p>Berikut adalah sertifikat yang telah saya peroleh selama perjalanan karier saya:</p>
+                
+                <div class="certificate-list">
+                    <!-- Sertifikat 1 -->
+                    <div class="certificate-item" data-certificate="1">
+                        <div class="certificate-image">
+                            <img src="sertif 1.jpeg" alt="Sertifikat Administrasi Keuangan">
+                        </div>
+                        <div class="certificate-info">
+                            <h4></h4>
+                            <p></p>
+                            <p class="certificate-year"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sertifikat 2 -->
+                    <div class="certificate-item" data-certificate="2">
+                        <div class="certificate-image">
+                            <img src="sertif 2.jpeg" alt="Sertifikat Verifikasi Dokumen">
+                        </div>
+                        <div class="certificate-info">
+                            <h4></h4>
+                            <p></p>
+                            <p class="certificate-year"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sertifikat 3 -->
+                    <div class="certificate-item" data-certificate="3">
+                        <div class="certificate-image">
+                            <img src="sertif 3.jpeg" alt="Sertifikat Manajemen Data">
+                        </div>
+                        <div class="certificate-info">
+                            <h4></h4>
+                            <p></p>
+                            <p class="certificate-year"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sertifikat 4 -->
+                    <div class="certificate-item" data-certificate="4">
+                        <div class="certificate-image">
+                            <img src="sertif 4.jpeg" alt="Sertifikat Microsoft Office">
+                        </div>
+                        <div class="certificate-info">
+                            <h4></h4>
+                            <p></p>
+                            <p class="certificate-year"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sertifikat 5 -->
+                    <div class="certificate-item" data-certificate="5">
+                        <div class="certificate-image">
+                            <img src="sertif 5.jpeg" alt="Sertifikat Insurance Administration">
+                        </div>
+                        <div class="certificate-info">
+                            <h4></h4>
+                            <p></p>
+                            <p class="certificate-year"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Sertifikat 6 -->
+                    <div class="certificate-item" data-certificate="6">
+                        <div class="certificate-image">
+                            <img src="sertif 6.jpeg" alt="Sertifikat Leadership & Communication">
+                        </div>
+                        <div class="certificate-info">
+                            <h4></h4>
+                            <p></p>
+                            <p class="certificate-year"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sertifikat Detail -->
+    <div class="certificate-modal" id="certificateModal">
+        <div class="modal-content">
+            <div class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </div>
+            <img class="modal-image" id="modalImage" src="" alt="Sertifikat Detail">
+            <div class="modal-info">
+                <h3 id="modalTitle">Judul Sertifikat</h3>
+                <p id="modalIssuer">Penerbit Sertifikat</p>
+                <p id="modalDate">Tanggal Sertifikat</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <h2>Hubungi Saya</h2>
+            
+            <div class="contact-content">
+                <h3>Siap Berkolaborasi</h3>
+                <p>Saya terbuka untuk peluang baru di bidang administrasi keuangan, verifikasi penjaminan, atau peran terkait pengolahan data keuangan. Mari berdiskusi tentang bagaimana pengalaman dan keahlian saya dapat memberikan nilai tambah untuk organisasi Anda.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>antopamungkas30
+                            @gmail.com</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Telepon</h4>
+                        <p>+6282299921490</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h4>Lokasi</h4>
+                        <p>Tangerang, Banten, Indonesia</p>
+                    </div>
+                    
+                    <a href="https://www.instagram.com/antopmgks?igsh=MjRybGxwMjltZTlr" target="_blank" class="contact-item">
+                    <div class="contact-icon">
+                    <i class="fab fa-instagram"></i>
+                    </div>
+                    <h4>Instagram</h4>
+                    <p>@antopmgks</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="footer-logo">YULIANTO.AP</a>
+                <p>Spesialis Administrasi Keuangan & Verifikasi Penjaminan</p>
+                
+                <div class="social-icons">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+                    <a ><i class="fas fa-envelope"></i></a>
+                    <a ><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ANTO PAMUNGKAS All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-bars');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Popup Sertifikat
+        const certificatePopup = document.getElementById('certificatePopup');
+        const viewCertificatesBtn = document.getElementById('viewCertificatesBtn');
+        const popupClose = document.getElementById('popupClose');
+        
+        // Buka popup sertifikat
+        viewCertificatesBtn.addEventListener('click', function() {
+            certificatePopup.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        // Tutup popup sertifikat
+        popupClose.addEventListener('click', function() {
+            certificatePopup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Tutup popup ketika klik di luar konten
+        certificatePopup.addEventListener('click', function(e) {
+            if (e.target === certificatePopup) {
+                certificatePopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Tutup popup dengan tombol ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && certificatePopup.classList.contains('active')) {
+                certificatePopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Modal Sertifikat Detail
+        const certificateModal = document.getElementById('certificateModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalIssuer = document.getElementById('modalIssuer');
+        const modalDate = document.getElementById('modalDate');
+        
+        // Data sertifikat detail - DIUPDATE dengan gambar dari img src
+        const certificatesData = {
+            1: {
+                title: "Sertifikat Administrasi Keuangan",
+                issuer: "Asosiasi Administrasi Keuangan Indonesia",
+                date: "2022",
+                // Mengambil sumber gambar dari elemen img di sertifikat 1
+                image: document.querySelector('.certificate-item[data-certificate="1"] .certificate-image img').src
+            },
+            2: {
+                title: "Sertifikat Verifikasi Dokumen",
+                issuer: "Indonesian Verification Institute",
+                date: "2021",
+                image: document.querySelector('.certificate-item[data-certificate="2"] .certificate-image img').src
+            },
+            3: {
+                title: "Sertifikat Manajemen Data",
+                issuer: "Data Management Association",
+                date: "2023",
+                image: document.querySelector('.certificate-item[data-certificate="3"] .certificate-image img').src
+            },
+            4: {
+                title: "Sertifikat Microsoft Office",
+                issuer: "Microsoft Certified Professional",
+                date: "2020",
+                image: document.querySelector('.certificate-item[data-certificate="4"] .certificate-image img').src
+            },
+            5: {
+                title: "Sertifikat Insurance Administration",
+                issuer: "Insurance Administration Board",
+                date: "2022",
+                image: document.querySelector('.certificate-item[data-certificate="5"] .certificate-image img').src
+            },
+            6: {
+                title: "Sertifikat Leadership & Communication",
+                issuer: "Professional Development Institute",
+                date: "2021",
+                image: document.querySelector('.certificate-item[data-certificate="6"] .certificate-image img').src
+            }
+        };
+        
+        // Event listeners untuk membuka modal detail
+        document.querySelectorAll('.certificate-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const certId = this.getAttribute('data-certificate');
+                const certData = certificatesData[certId];
+                
+                if (certData) {
+                    // Mengambil gambar langsung dari elemen yang diklik
+                    const clickedImage = this.querySelector('.certificate-image img').src;
+                    
+                    modalImage.src = clickedImage;
+                    modalTitle.textContent = certData.title;
+                    modalIssuer.textContent = certData.issuer;
+                    modalDate.textContent = certData.date;
+                    
+                    certificateModal.classList.add('active');
+                    certificatePopup.classList.remove('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close modal detail
+        modalClose.addEventListener('click', function() {
+            certificateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal ketika klik di luar konten
+        certificateModal.addEventListener('click', function(e) {
+            if (e.target === certificateModal) {
+                certificateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal dengan tombol ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
+                certificateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Inisialisasi data sertifikat setelah halaman dimuat
+        window.addEventListener('DOMContentLoaded', function() {
+            // Update data sertifikat dengan gambar yang sebenarnya
+            document.querySelectorAll('.certificate-item').forEach(item => {
+                const certId = item.getAttribute('data-certificate');
+                const certImage = item.querySelector('.certificate-image img').src;
+                const certTitle = item.querySelector('.certificate-info h4').textContent;
+                const certIssuer = item.querySelector('.certificate-info p').textContent;
+                const certYear = item.querySelector('.certificate-year').textContent;
+                
+                // Update data sertifikat
+                certificatesData[certId] = {
+                    title: certTitle,
+                    issuer: certIssuer,
+                    date: certYear,
+                    image: certImage
+                };
+            });
+        });
+    </script>
+</body>
+</html>
